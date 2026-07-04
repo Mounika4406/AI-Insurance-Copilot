@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from './config';
 
 export default function Report({ setView }) {
   const [report, setReport] = useState(null);
@@ -19,7 +20,7 @@ export default function Report({ setView }) {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/analyze', {
+      const response = await fetch(`${API_URL}/api/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: 1 })
@@ -54,7 +55,7 @@ export default function Report({ setView }) {
     formData.append('user_id', 1);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/upload-bill', {
+      const response = await fetch(`${API_URL}/api/upload-bill`, {
         method: 'POST',
         body: formData,
       });

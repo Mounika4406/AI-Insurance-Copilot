@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { API_URL } from './config';
 
 export default function Chat({ setView }) {
   const [messages, setMessages] = useState([
@@ -31,7 +32,7 @@ export default function Chat({ setView }) {
     setLoading(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/ask', {
+      const response = await fetch(`${API_URL}/api/ask`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: query, user_id: 1 })

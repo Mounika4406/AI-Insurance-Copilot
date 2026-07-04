@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from './config';
 
 export default function Dashboard({ setView, user, onLogout }) {
   const [stats, setStats] = useState({
@@ -19,7 +20,7 @@ export default function Dashboard({ setView, user, onLogout }) {
 
   const fetchStats = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/report?user_id=1');
+      const response = await fetch(`${API_URL}/api/report?user_id=1`);
       if (response.ok) {
         const data = await response.json();
         setStats(data.stats);

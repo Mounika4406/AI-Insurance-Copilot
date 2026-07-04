@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from './config';
 
 export default function Upload({ setView, initialTab = 'policy' }) {
   const [activeTab, setActiveTab] = useState(initialTab);
@@ -17,7 +18,7 @@ export default function Upload({ setView, initialTab = 'policy' }) {
 
   const checkExisting = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/report?user_id=1');
+      const res = await fetch(`${API_URL}/api/report?user_id=1`);
       if (res.ok) {
         const data = await res.json();
         if (data.current_policy) {
@@ -62,7 +63,7 @@ export default function Upload({ setView, initialTab = 'policy' }) {
     formData.append('user_id', 1);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/upload-policy', {
+      const response = await fetch(`${API_URL}/api/upload-policy`, {
         method: 'POST',
         body: formData,
       });
@@ -97,7 +98,7 @@ export default function Upload({ setView, initialTab = 'policy' }) {
     formData.append('user_id', 1);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/upload-bill', {
+      const response = await fetch(`${API_URL}/api/upload-bill`, {
         method: 'POST',
         body: formData,
       });
