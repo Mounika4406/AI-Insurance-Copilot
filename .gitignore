@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.eslintcache
+
+# Project Caches & Databases
+models/claim_model.pkl
+vector_db/chunks.pkl
+vector_db/faiss_index/
+*.db
+*.sqlite
+
+# Upload Folders (Keep folders, ignore contents)
+claims/*
+!claims/.gitkeep
+policies/*
+!policies/.gitkeep
+
+# IDEs & System
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Custom fonts and scrollbars */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 50% 0%, #1e1135 0%, #0d0e12 60%);
+  color: #e2e8f0;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0e12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f222e;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aa3bff;
+}
+
+/* Custom styles for animations and card borders */
+.glass-panel {
+  background: rgba(17, 20, 32, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glow-button {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+  transform: translateY(-1px);
+}
+
+.glow-button:active {
+  transform: translateY(1px);
+}
+
+/* Micro-animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+}
+
+.glow-overlay {
+  position: absolute;
+  filter: blur(80px);
+  border-radius: 9999px;
+  animation: pulseGlow 8s ease-in-out infinite;
+}

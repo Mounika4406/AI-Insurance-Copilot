@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+psycopg2-binary
+sqlalchemy
+pypdf
+langchain
+langchain-community
+faiss-cpu
+google-generativeai
+langchain-google-genai
+scikit-learn
+numpy
+python-dotenv
