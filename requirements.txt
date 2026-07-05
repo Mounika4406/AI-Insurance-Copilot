@@ -13,3 +13,4 @@ langchain-google-genai
 scikit-learn
 numpy
 python-dotenv
+pandas
